@@ -3,8 +3,8 @@
 	"process": {
 		"terminal": true,
 		"user": {
-			"uid": 1002,
-			"gid": 1002
+			"uid": 0,
+			"gid": 0
 		},
 		"args": [
 			"sh"
@@ -86,7 +86,7 @@
 			"type": "tmpfs",
 			"source": "shm",
 			"options": [
-				"nosuid",
+				"suid",
 				"noexec",
 				"nodev",
 				"mode=1777",
@@ -98,7 +98,7 @@
 			"type": "mqueue",
 			"source": "mqueue",
 			"options": [
-				"nosuid",
+				"suid",
 				"noexec",
 				"nodev"
 			]
@@ -111,7 +111,7 @@
 				"nosuid",
 				"noexec",
 				"nodev",
-				"ro"
+				"rw"
 			]
 		},
 		{
@@ -123,7 +123,7 @@
 				"noexec",
 				"nodev",
 				"relatime",
-				"ro"
+				"rw"
 			]
 		}
 	],
