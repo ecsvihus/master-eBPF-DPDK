@@ -142,7 +142,7 @@
 			},
 			{
 				"type": "network",
-				"path": "/var/run/netns/ebpf"
+				"path": "/var/run/netns/dpdk"
 			},
 			{
 				"type": "ipc"
