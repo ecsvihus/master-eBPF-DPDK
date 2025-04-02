@@ -1,12 +1,44 @@
 # Load ggplot2
 library(ggplot2)
-library(gridExtra)
+# library(gridExtra)
 #library(ggpubr)
 
 histogramDF <- data.frame(
-  type=c('xdp','dpdk','linux'),
+  type=c(rep('xdp', 123),'dpdk','linux'),
   latency=c(scan("./ping-xdp.dat")*1000,scan("./ping-dpdk.dat")*1000,scan("./ping-linux.dat")*1000)
 )
+
+library(data.table)
+library(tidyverse)
+
+all.data <-
+  bind_rows(
+    "xdp" = fread("ping-xdp.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
+    "dpdk" = fread("ping-dpdk.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
+    "napi" = fread("ping-linux.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
+    .id = "src"
+  )
+
+all.data2 <-
+  bind_rows(
+    "xdp" = iperf_xdp,
+    "dpdk" = iperf_dpdk,
+    "napi" = iperf_linux,
+    .id = "src"
+  )
+
+all.equal(all.data %>% as.data.frame(), all.data2)
+
+ggplot(all.data, aes(x = latency, color = src)) +
+  # stat_ecdf()
+  stat_density()
+
+all.data %>% group_by(src) %>% summarise(meanlatency = mean(latency))
+
+ggplot(all.data, aes(x = latency, fill = src)) +
+  geom_histogram(position = position_dodge2()) +
+  # coord_cartesian(xlim = c(0, 500)) +
+  scale_x_log10()
 
 
 iperf_xdp <- data.frame(
@@ -51,16 +83,26 @@ m256dpdk$latency <- factor(m256dpdk$latency, levels=m256dpdk$latency)
 m256linux$latency <- factor(m256linux$latency, levels=m256linux$latency)
 
 #ggplot(histogramDF, aes(x=latency, color=type)) + geom_histogram(binwidth = 1/10, position="dodge") +
-        #scale_x_continuous(breaks=seq(0,1500,10)) + 
+        #scale_x_continuous(breaks=seq(0,1500,10)) +
 #        scale_y_continuous(breaks=seq(0,40000,5000)) +
 #        scale_x_log10(breaks=seq(0,1500,100))
 
-iperfXDP <- ggplot(iperf_xdp, aes(x=latency)) + geom_histogram(binwidth = 1/10) + 
-	#scale_x_continuous(breaks=seq(0,1500,10)) + 
+
+
+ggplot(iperf_xdp, aes(x = latency)) +
+  stat_ecdf() +
+  # scale_x_log10() +
+  coord_cartesian(xlim = c(0, 500))
+
+iperfXDP <- ggplot(iperf_xdp, aes(x=latency)) + geom_histogram(binwidth = 1/10) +
+	#scale_x_continuous(breaks=seq(0,1500,10)) +
 	#scale_y_continuous(breaks=seq(0,40000,5000)) +
-	coord_cartesian(xlim=c(0,2000)) +
-#	scale_x_log10(breaks=seq(0,1500,100)) + 
-	scale_x_log10()
+  scale_x_log10()+
+	coord_cartesian(xlim=c(0,2000))
+#	scale_x_log10(breaks=seq(0,1500,100)) +
+
+
+iperfXDP
 
 iperfDPDK <- ggplot(iperf_dpdk, aes(x=latency)) + geom_histogram(binwidth = 1/10) +
 	#scale_y_continuous(breaks=seq(0,40000,5000)) +
@@ -76,14 +118,14 @@ iperfLinux <- ggplot(iperf_linux, aes(x=latency)) + geom_histogram(binwidth = 1/
 
 
 # Barplot
-xdp <- ggplot(m256xdp, aes(x=latency, y=value)) + 
+xdp <- ggplot(m256xdp, aes(x=latency, y=value)) +
   geom_bar(stat = "identity") +
   ggtitle("XDP@M256")
 
 
 # Barplot
 dpdk <- ggplot(m256dpdk, aes(x=latency, y=value)) +
-  geom_bar(stat = "identity") + 
+  geom_bar(stat = "identity") +
   ggtitle("DPDK@M256")
 
 
