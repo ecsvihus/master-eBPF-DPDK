@@ -5,7 +5,7 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-count=1000000
+count=2000000
 
 
 test () {
