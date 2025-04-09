@@ -5,86 +5,37 @@ library(data.table)
 
 all.data <-
   bind_rows(
-    "DPDK@0G" = fread("dpdk-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "DPDK@3G" = fread("dpdk-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "DPDK@6G" = fread("dpdk-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@0G" = fread("napi-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@3G" = fread("napi-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@6G" = fread("napi-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@0G" = fread("xdp-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@3G" = fread("xdp-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@6G" = fread("xdp-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
+    "DPDK@0G" = fread("dpdk-0G.dat", col.names = "latency"),
+    "DPDK@3G" = fread("dpdk-3G.dat", col.names = "latency"),
+    "DPDK@6G" = fread("dpdk-6G.dat", col.names = "latency"),
+    "NAPI@0G" = fread("napi-0G.dat", col.names = "latency"),
+    "NAPI@3G" = fread("napi-3G.dat", col.names = "latency"),
+    "NAPI@6G" = fread("napi-6G.dat", col.names = "latency"),
+    "XDP@0G" = fread("xdp-0G.dat", col.names = "latency"),
+    "XDP@3G" = fread("xdp-3G.dat", col.names = "latency"),
+    "XDP@6G" = fread("xdp-6G.dat", col.names = "latency"),
     .id = "src"
-  )
-
-dpdk.data <-
-  bind_rows(
-    "DPDK@0G" = fread("dpdk-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "DPDK@3G" = fread("dpdk-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "DPDK@6G" = fread("dpdk-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
-
-napi.data <-
-  bind_rows(
-    "NAPI@0G" = fread("napi-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@3G" = fread("napi-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@6G" = fread("napi-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
-
-xdp.data <-
-  bind_rows(
-    "XDP@0G" = fread("xdp-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@3G" = fread("xdp-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@6G" = fread("xdp-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
-
-g0.data <-
-  bind_rows(
-    "DPDK@0G" = fread("dpdk-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@0G" = fread("napi-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@0G" = fread("xdp-0G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
-
-g3.data <-
-  bind_rows(
-    "DPDK@3G" = fread("dpdk-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@3G" = fread("napi-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@3G" = fread("xdp-3G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
-
-g6.data <-
-  bind_rows(
-    "DPDK@6G" = fread("dpdk-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "NAPI@6G" = fread("napi-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    "XDP@6G" = fread("xdp-6G.dat", col.names = "latency") %>% mutate(latency = 1000 * latency),
-    .id = "src"
-  )
+  ) %>% mutate(latency = 1000 * latency)
 
 #all
 ggplot(all.data, aes(x = latency, color = src)) +
   scale_color_manual(values=c("#b30000", "#ff0000", "#ff6666","#0000b3","#0000ff","#6666ff","#00b300","#00ff00","#66ff66")) +
   stat_ecdf() +
   #stat_density() +
+  #stat_boxplot() +
   scale_x_log10() +
   coord_cartesian(xlim = c(44,3000))
-  
-
 
 #DPDK only
-ggplot(dpdk.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(src %in% c('DPDK@0G','DPDK@3G','DPDK@6G')), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#b30000", "#ff0000", "#ff6666")) +
   stat_ecdf() +
-  stat_density() +
+  #stat_density() +
   scale_x_log10() +
   coord_cartesian(xlim = c(44,3000))
 
 #NAPI only
-ggplot(napi.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(grepl('NAPI',src)), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#0000b3","#0000ff","#6666ff")) +
   stat_ecdf() +
   #stat_density() +
@@ -92,7 +43,7 @@ ggplot(napi.data, aes(x = latency, color = src)) +
   coord_cartesian(xlim = c(44,3000))
 
 #XDP only
-ggplot(xdp.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(grepl('XDP',src)), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#00b300","#00ff00","#66ff66")) +
   stat_ecdf() +
   #stat_density() +
@@ -100,7 +51,7 @@ ggplot(xdp.data, aes(x = latency, color = src)) +
   coord_cartesian(xlim = c(44,3000))
 
 #0G only
-ggplot(g0.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(grepl('0G',src)), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#b30000","#0000b3","#00b300")) +
   stat_ecdf() +
   #stat_density() +
@@ -108,7 +59,7 @@ ggplot(g0.data, aes(x = latency, color = src)) +
   coord_cartesian(xlim = c(44,3000))
 
 #3G only
-ggplot(g3.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(grepl('3G',src)), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#ff0000","#0000ff","#00ff00")) +
   stat_ecdf() +
   #stat_density() +
@@ -116,7 +67,7 @@ ggplot(g3.data, aes(x = latency, color = src)) +
   coord_cartesian(xlim = c(44,3000))
 
 #6G only
-ggplot(g6.data, aes(x = latency, color = src)) +
+ggplot(all.data %>% filter(grepl('6G',src)), aes(x = latency, color = src)) +
   scale_color_manual(values=c("#ff6666","#6666ff","#66ff66")) +
   stat_ecdf() +
   #stat_density() +
