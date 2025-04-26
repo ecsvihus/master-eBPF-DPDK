@@ -79,21 +79,9 @@ ggplot(all.data %>% filter(grepl('6G',src)), aes(x = latency, color = src)) +
 
 all.data %>% group_by(src) %>% summarise(meanlatency = mean(latency))
 
-ggplot(g3.data, aes(x = latency, fill = src)) +
+ggplot(all.data %>% filter(grepl('3G',src)), aes(x = latency, fill = src)) +
   scale_fill_manual(values=c("#b30000", "#ff0000", "#ff6666","#0000b3","#0000ff","#6666ff","#00b300","#00ff00","#66ff66")) +
   geom_histogram(position = position_dodge2()) +
   coord_cartesian(xlim = c(44, 3000)) +
   scale_x_log10()
 
-
-
-
-#ggplot(iperf_xdp, aes(x = latency)) +
-#  stat_ecdf() +
-#  # scale_x_log10() +
-#  coord_cartesian(xlim = c(0, 500))
-
-
-
-
-#grid.arrange(iperfXDP, iperfDPDK, iperfLinux, nrow = )
