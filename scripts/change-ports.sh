@@ -86,6 +86,25 @@ function xdp () {
 }
 
 
+function auto () {
+	while read command; do
+    	echo "read '"$command"'"
+		if [ "$command" == "dpdk" ]; then
+			stop
+			dpdk
+			echo "done" | nc -N 10.10.10.2 8889
+		elif [ "$command" == "napi" ]; then
+			stop
+			napi
+			echo "done" | nc -N 10.10.10.2 8889
+		elif [ "$command" == "xdp" ]; then
+			stop
+			xdp
+			echo "done" | nc -N 10.10.10.2 8889
+		fi
+	done < <(nc -nklp 8888)
+}
+
 
 if [ "$1" == "dpdk" ]; then
 	echo "starting DPDK"
@@ -102,6 +121,9 @@ elif [ "$1" == "xdp" ]; then
 elif [ "$1" == "stop" ]; then
 	echo "Stopping"
 	stop
+elif [ "$1" == "auto" ]; then
+	echo "Automatic mode"
+	auto
 else
 	echo "invalid command"
 fi
