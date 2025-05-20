@@ -103,6 +103,8 @@ function auto () {
 			stop
 			xdp
 			echo "done" | nc -N 10.10.10.2 8889
+		elif [ "$command" == "dump" ]; then
+			echo "$(ovs-ofctl dump-flows br1)" | nc -N 10.10.10.2 8889
 		fi
 	done < <(nc -nklp 8888)
 }
