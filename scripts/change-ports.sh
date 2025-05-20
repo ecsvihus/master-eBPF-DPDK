@@ -24,8 +24,12 @@ function stop () {
 
 function flows () {
 	ovs-vsctl list-br | xargs -L1 sudo ovs-ofctl del-flows
-	ovs-ofctl add-flow $1 "in_port=eno1, actions=output:eno2"
-	ovs-ofctl add-flow $1 "in_port=eno2, actions=output:eno1"
+	ovs-ofctl add-flow $1 "tcp,in_port=eno1, actions=output:eno2"
+	ovs-ofctl add-flow $1 "tcp,in_port=eno2, actions=output:eno1"
+	ovs-ofctl add-flow $1 "icmp,in_port=eno1, actions=output:eno2"
+	ovs-ofctl add-flow $1 "icmp,in_port=eno2, actions=output:eno1"
+	ovs-ofctl add-flow $1 "arp,in_port=eno1, actions=output:eno2"
+	ovs-ofctl add-flow $1 "arp,in_port=eno2, actions=output:eno1"
 }
 
 function dpdk () {
