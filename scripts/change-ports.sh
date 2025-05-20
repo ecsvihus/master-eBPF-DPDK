@@ -107,8 +107,14 @@ function auto () {
 			echo "done" | nc -N 10.10.10.2 8889
 			echo "done"
 		elif [ "$command" == "dump" ]; then
-			echo "recieved dump command"
-			echo "$(ovs-ofctl dump-flows br1)" | nc -N 10.10.10.2 8889
+			#sometimes command output is empty
+			declare dump
+			while [[ -z $dump ]]; do
+				dump=$(ovs-ofctl dump-flows br1)
+				sleep 0.5
+			done
+
+			echo "$dump" | nc -N 10.10.10.2 8889
 			echo "done"
 		fi
 	done < <(nc -nklp 8888)
