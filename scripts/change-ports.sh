@@ -67,19 +67,17 @@ function xdp () {
 
 	ovs-vsctl -- add-br br1 -- set bridge br1 datapath_type=netdev
 
-	ovs-vsctl set Open_vSwitch . other_config:pmd-cpu-mask=0x30
+#	ovs-vsctl set Open_vSwitch . other_config:pmd-cpu-mask=0x30
 	#ovs-vsctl set Open_vSwitch . other_config:pmd-rxq-isolate=false
 
         ethtool -L eno1 combined 1
 	ovs-vsctl add-port br1 eno1 -- set interface eno1 type="afxdp" \
-		other_config:pmd-rxq-affinity="0:4"
-#		options:n_rxq=2 options:xdp-mode=best-effort \ 
+		options:xdp-mode=best-effort
 #		other_config:pmd-rxq-affinity="0:4,1:5"
 
 	ethtool -L eno2 combined 1	
         ovs-vsctl add-port br1 eno2 -- set interface eno2 type="afxdp" \
-		other_config:pmd-rxq-affinity="0:5"
-#                options:n_rxq=2 options:xdp-mode=best-effort 
+		options:xdp-mode=best-effort 
 #		other_config:pmd-rxq-affinity="0:6,1:7"
 
 	flows br1
