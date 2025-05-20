@@ -108,8 +108,11 @@ function auto () {
 			echo "done"
 		elif [ "$command" == "dump" ]; then
 			#sometimes command output is empty
-			declare dump
+			declare dump=$(ovs-ofctl dump-flows br1)
+			declare -i counter=0
 			while [[ -z $dump ]]; do
+				counter+=1
+				echo "dump failed, trying again"
 				dump=$(ovs-ofctl dump-flows br1)
 				sleep 0.5
 			done
