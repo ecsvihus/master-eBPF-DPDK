@@ -6,7 +6,7 @@ fi
 
 verbose=1
 stream_count=4
-increment=3000
+increment=10000
 out="./pcaps"
 pkt_size=512
 srv_ip=10.0.0.1
@@ -18,7 +18,7 @@ expected_round_time=$(echo $iat*$round_size | bc)
 DuTs=(
 #	xdp
 #	napi
-#	dpdk
+	dpdk
 )
 
 declare -a experiments
@@ -61,6 +61,7 @@ kill_pid () {
 change_dut () {
 	log "sending '$1'..."
 	echo $1 | nc -N 10.10.10.1 8888
+	log "sent"
 	while read command; do
 		if [[ $command == "done" ]]; then 
 			log "DuT change succeded"
@@ -76,15 +77,19 @@ test () {
 	tcpdumpPID=""
 	if [ $2 -ge 1 ]; then
 		wait_for_iperf
-		ip netns exec client iperf3 -c $srv_ip -t 86400 -b $(echo $2/$stream_count | bc)M -M$pkt_size -P $stream_count -J &>> ./log/iperf3Client/$1-$2-$3 &
+		ip netns exec client iperf3 -c $srv_ip -t 86400 \
+			-b $(echo $2/$stream_count | bc)M -M$pkt_size -P $stream_count -J \
+			&>> ./log/iperf3Client/$1-$2-$3 &
 		iperfPID=$!
 	fi
 
-	#bash -c "ip netns exec client sudo tcpdump -ni eno2 -w $out/$1-$2-$3.pcap -Us 60 -B 16384 -c $(echo 2*$round_size | bc) icmp &>> ./log_tcpdump &"
-	ip netns exec client sudo tcpdump -ni eno2 -w $out/$1-$2-$3.pcap -Us 60 -B 16384 -c $(echo 2*$round_size | bc) icmp &>> ./log/tcpdump/$1-$2-$3 &
+	ip netns exec client sudo tcpdump -ni eno2 -w $out/$1-$2-$3.pcap \
+		-Us 60 -B 16384 -c $(echo 2*$round_size | bc) icmp \
+		&>> ./log/tcpdump/$1-$2-$3 &
 	tcpdumpPID=$!
 	#waiting for tcpdump to start
-	ip netns exec client sudo tcpdump -ni eno2 -w /dev/null -Us 60 -B 16384 -c 1 &> /dev/null
+	ip netns exec client sudo tcpdump -ni eno2 -w /dev/null \
+		-Us 60 -B 16384 -c 1 &> /dev/null
 
 	/usr/bin/time -f "expected time: $expected_round_time actual time: %e" \
 		ip netns exec client sudo python3 \
@@ -104,7 +109,9 @@ test () {
 				kill_pid $iperfPID
 				kill_pid $tcpdumpPID
 				printf "\n"
-				bps=$(sed '1d;$d' ./log/iperf3Client/$1-$2-$3 | jq '.end.sum_sent.bits_per_second')
+				bps=$(sed '1d;$d' ./log/iperf3Client/$1-$2-$3 |\
+					jq '.end.sum_sent.bits_per_second')
+
 				log "$1-$2-$3: "$(echo "scale=2;$bps/1024^3" | bc -l)"gbps"
 			fi
 			break
@@ -140,14 +147,7 @@ for experiment in "${experiments[@]}"; do
 	dut=$(echo $experiment | cut -d "-" -f 1)
 	round=$(echo $experiment | cut -d "-" -f 2)
 
-
-	echo $dut | nc -N 10.10.10.1 8888
-	while read command; do
-		if [[ "${string1}" != "${done}" ]]; then #FIXME
-			echo "TODO: error handling"
-		fi
-	done < <(nc -nlp 8889)
-
+	change_dut $dut
 	for traffic in $(seq 0 $increment 9000); do
 		printf "running $dut at "$traffic"M round "$round"\n"
 		while :; do
@@ -176,6 +176,11 @@ while :; do
 	read -p "press enter to start"
 	test $dut $traffic $round
 	change_dut dump $dut $traffic $round
+	#time=$(date +t%H%M%S)
+	#echo $time
+	#change_dut dpdk
+	#test dpdk 10000 $time
+	#change_dut dump dpdk 10000 $time
 done
 	
 else 
