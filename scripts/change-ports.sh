@@ -95,16 +95,21 @@ function auto () {
 			stop
 			dpdk
 			echo "done" | nc -N 10.10.10.2 8889
+			echo "done"
 		elif [ "$command" == "napi" ]; then
 			stop
 			napi
 			echo "done" | nc -N 10.10.10.2 8889
+			echo "done"
 		elif [ "$command" == "xdp" ]; then
 			stop
 			xdp
 			echo "done" | nc -N 10.10.10.2 8889
+			echo "done"
 		elif [ "$command" == "dump" ]; then
+			echo "recieved dump command"
 			echo "$(ovs-ofctl dump-flows br1)" | nc -N 10.10.10.2 8889
+			echo "done"
 		fi
 	done < <(nc -nklp 8888)
 }
