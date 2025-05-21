@@ -11,13 +11,13 @@ out="./pcaps"
 pkt_size=512
 srv_ip=10.0.0.1
 rounds=1
-iat=0.00001
+iat=0.001
 round_size=65535 #65535 max
 expected_round_time=$(echo $iat*$round_size | bc)
 
 DuTs=(
-#	xdp
-#	napi
+	xdp
+	napi
 	dpdk
 )
 
@@ -121,8 +121,16 @@ test () {
 		diff=$(echo $now-$start_time | bc) 
 		if [ $diff -ge 5 ]; then
 			printf "\n"
-			echo "timeout"
-			repeat=1
+			captured_pkts=$(tcpdump -r $out/$1-$2-$3.pcap 2>> /dev/null \
+					| wc -l)
+			missed_pkts=$(echo $round_size*2-$captured_pkts | bc)
+			log "$missed_pkts missed packets"
+
+			if [ $missed_pkts -gt 10 ]; then
+				log "more than 10 missed packets, redoing experiment"
+				repeat=1
+			fi
+			
 			if [ $2 -ge 1 ]; then
 				kill_pid $iperfPID
 				kill_pid $tcpdumpPID
@@ -177,10 +185,9 @@ while :; do
 	test $dut $traffic $round
 	change_dut dump $dut $traffic $round
 	#time=$(date +t%H%M%S)
-	#echo $time
-	#change_dut dpdk
-	#test dpdk 10000 $time
-	#change_dut dump dpdk 10000 $time
+	#change_dut napi
+	#test napi 10000 $time
+	#change_dut dump napi 10000 $time
 done
 	
 else 
