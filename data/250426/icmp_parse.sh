@@ -1,13 +1,22 @@
 #!/bin/bash
 
-echo $1
+in=$1
+out=$2
 
-for x in $1
-do
-	echo $x
-done
+if [[ -z "$in" ]]; then
+	echo "assuming in=./pcaps"
+	in="./pcaps"
+fi
+if [[ -z "$out" ]]; then
+	echo "assuming out=./data"
+	out="./data"
+fi
 
-tcpdump -r $1 2> /dev/null | tr ',' ' ' |
+
+
+
+function parse () {
+	tcpdump -r $1 2> /dev/null | tr ',' ' ' |
 	awk '{a[$12] = a[$12] ? a[$12] FS $1 : $1} END {for (i in a) print a[i], i}' |
 	awk '{
 		split($1, t_1, ":");
@@ -17,5 +26,18 @@ tcpdump -r $1 2> /dev/null | tr ',' ' ' |
 		end_us = t_2[1]*3600000000 + t_2[2]*60000000 + t_2[3]*1000000;
 		diff_us = end_us-start_us
 
-		printf "%s %i\n", $3, diff_us;
-	}' > /dev/null
+		printf "%i\n", diff_us;
+	}'
+}
+
+
+
+
+while read file; do
+	echo "file: "$file
+	parse $in/$file.pcap > $out/$file.data
+done <<< $(ls -1 $in | cut -d "." -f 1)
+
+
+
+
