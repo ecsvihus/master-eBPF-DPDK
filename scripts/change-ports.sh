@@ -74,7 +74,7 @@ function xdp () {
 #	ovs-vsctl set Open_vSwitch . other_config:pmd-cpu-mask=0x30
 	#ovs-vsctl set Open_vSwitch . other_config:pmd-rxq-isolate=false
 
-        ethtool -L eno1 combined 1
+    ethtool -L eno1 combined 1
 	ovs-vsctl add-port br1 eno1 -- set interface eno1 type="afxdp" \
 		options:xdp-mode=best-effort
 #		other_config:pmd-rxq-affinity="0:4,1:5"
@@ -122,6 +122,11 @@ function auto () {
 		fi
 	done < <(nc -nklp 8888)
 }
+
+
+
+mapfile -t pidsArr < <(pgrep ksoftirqd && pgrep "ovs-vswitchd")
+pidsStr=$(echo "${pidsArr[*]}")
 
 
 if [ "$1" == "dpdk" ]; then
