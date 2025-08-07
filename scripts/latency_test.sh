@@ -4,25 +4,32 @@ if [ "$EUID" -ne 0 ]
 	exit
 fi
 
-verbose=1
-stream_count=4
-increment=10000
-out="./pcaps"
-pkt_size=512
-srv_ip=10.0.0.1
-rounds=1
-iat=0.001
-round_size=65535 #65535 max
-expected_round_time=$(echo $iat*$round_size | bc)
+if [ -z "${5}" ]; then
+	echo "Bad Arguments, command usage:"
+	echo "latency_test.sh <mode> <round_size> <rounds> <pkt_size> <ping inter arrival time> <comma separated list of DuTs> <max bandwidth>"
+	echo "example:"
+	echo "latency_test.sh auto 65535 10 1400 0.001 xdp,napi,dpdk"
+	exit 2
+fi
 
-DuTs=(
-	xdp
-	napi
-	dpdk
-)
+pid=$$
+verbose=1
+stream_count=10
+increment=1000
+out="./pcaps"
+pkt_size=$4
+srv_ip=10.0.0.1
+rounds=$3
+iat=$5
+round_size=$2 #65535 max
+expected_round_time=$(echo $iat*$round_size | bc)
+max_traffic=$7
+
+DuTs=$6
 
 declare -a experiments
-for dut in "${DuTs[@]}"; do
+#for dut in "${DuTs[@]}"; do
+for dut in $(echo $DuTs | tr ',' ' '); do
 for round in $(seq $rounds); do
 	experiments+=($dut-$round)
 done
@@ -31,10 +38,12 @@ experiments=( $(shuf -e "${experiments[@]}") )
 
 
 log () {
+	echo 	
 	if (( verbose == 1 )); then
 		echo $1
 	fi
 	
+	echo $(ps -p $pid -o etimes=)"  $1" >> ./log/main
 }
 
 wait_for_iperf () {
@@ -45,6 +54,7 @@ wait_for_iperf () {
 			#printf "OK\n"
 			break
 		fi
+		echo "iperf not ready"
 	done
 }
 
@@ -59,60 +69,66 @@ kill_pid () {
 }
 
 change_dut () {
-	log "sending '$1'..."
+	#log "sending '$1'..."
 	echo $1 | nc -N 10.10.10.1 8888
-	log "sent"
+	#log "sent"
 	while read command; do
 		if [[ $command == "done" ]]; then 
-			log "DuT change succeded"
+			echo "DuT change succeded"
 		else
-			echo $command >> ./log/flow-dumps/$2-$3-$4
+			echo $command >> ./log/flow-dumps/$2-$3-$4-$5
 		fi
 	done < <(nc -nlp 8889)
-	log "finished sending"
+	#log "finished sending"
 }
 
 test () {
 	iperfPID=""
-	tcpdumpPID=""
+	#tcpdumpPID1=""
+	tcpdumpPID2=""
 	if [ $2 -ge 1 ]; then
 		wait_for_iperf
 		ip netns exec client iperf3 -c $srv_ip -t 86400 \
 			-b $(echo $2/$stream_count | bc)M -M$pkt_size -P $stream_count -J \
-			&>> ./log/iperf3Client/$1-$2-$3 &
+			&>> ./log/iperf3Client/$1-$2-$3-$4 &
 		iperfPID=$!
 	fi
 
-	ip netns exec client sudo tcpdump -ni eno2 -w $out/$1-$2-$3.pcap \
+	ip netns exec client sudo tcpdump -ni eno2 -w $out/eno2-$1-$2-$3-$4.pcap \
 		-Us 60 -B 16384 -c $(echo 2*$round_size | bc) icmp \
-		&>> ./log/tcpdump/$1-$2-$3 &
-	tcpdumpPID=$!
+		&>> ./log/tcpdump/eno2-$1-$2-$3-$4 &
+	tcpdumpPID2=$!
+	#ip netns exec server sudo tcpdump -ni eno1 -w $out/eno1-$1-$2-$3-$4.pcap \
+	#	-Us 60 -B 16384 -c $(echo 2*$round_size | bc) icmp \
+	#	&>> ./log/tcpdump/eno1-$1-$2-$3-$4 &
+	#tcpdumpPID1=$!
 	#waiting for tcpdump to start
 	ip netns exec client sudo tcpdump -ni eno2 -w /dev/null \
 		-Us 60 -B 16384 -c 1 &> /dev/null
 
-	/usr/bin/time -f "expected time: $expected_round_time actual time: %e" \
+	/usr/bin/time -f $(ps -p $pid -o etimes=)"  $1-$2-$3-$4: %e" \
 		ip netns exec client sudo python3 \
 		/home/ecsvihus/2024-cnsm-5g-code/scripts/trafgen/5g-dp-client-v3.py \
-		icmp det $iat small $round_size $srv_ip 6789 1 
+		icmp det $iat small $round_size $srv_ip 6789 1 &>> ./log/main
 	
 	start_time=$(date +%s)
 	while :; do
 		sleep 0.5
 
-		ps --pid=$tcpdumpPID &> /dev/null
+		ps --pid=$tcpdumpPID2 &> /dev/null
 		result=$?
 		#if tcpdump is still running
 		if [ ${result} -eq 1 ]; then
 			#if experiment had background traffic
 			if [ $2 -ge 1 ]; then
 				kill_pid $iperfPID
-				kill_pid $tcpdumpPID
+				kill_pid $tcpdumpPID2
+				#kill_pid $tcpdumpPID1
 				printf "\n"
-				bps=$(sed '1d;$d' ./log/iperf3Client/$1-$2-$3 |\
+				bps=$(sed '1d;$d' ./log/iperf3Client/$1-$2-$3-$4 |\
 					jq '.end.sum_sent.bits_per_second')
 
-				log "$1-$2-$3: "$(echo "scale=2;$bps/1024^3" | bc -l)"gbps"
+				log "$1-$2-$3-$4: "$(echo "scale=2;$bps/1000^3" | bc -l)"gbps"
 			fi
 			break
 		fi
@@ -121,7 +137,7 @@ test () {
 		diff=$(echo $now-$start_time | bc) 
 		if [ $diff -ge 5 ]; then
 			printf "\n"
-			captured_pkts=$(tcpdump -r $out/$1-$2-$3.pcap 2>> /dev/null \
+			captured_pkts=$(tcpdump -r $out/$1-$2-$3-$4.pcap 2>> /dev/null \
 					| wc -l)
 			missed_pkts=$(echo $round_size*2-$captured_pkts | bc)
 			log "$missed_pkts missed packets"
@@ -133,7 +149,8 @@ test () {
 			
 			if [ $2 -ge 1 ]; then
 				kill_pid $iperfPID
-				kill_pid $tcpdumpPID
+				kill_pid $tcpdumpPID2
+				#kill_pid $tcpdumpPID1
 			fi
 			break
 		else
@@ -156,12 +173,14 @@ for experiment in "${experiments[@]}"; do
 	round=$(echo $experiment | cut -d "-" -f 2)
 
 	change_dut $dut
-	for traffic in $(seq 0 $increment 9000); do
-		printf "running $dut at "$traffic"M round "$round"\n"
+	for traffic in $(seq 0 $increment $max_traffic); do
+
+		log "running $dut at $traffic M round $round"
 		while :; do
 			repeat=0
-			test $dut $traffic $round
+			test $dut $traffic $round $pkt_size
 			if [ $repeat -eq 0 ]; then
+				change_dut dump $dut $traffic $round $pkt_size
 				break
 			else
 				echo "repeating"
@@ -182,7 +201,7 @@ while :; do
 	round=$REPLY
 	change_dut $dut
 	read -p "press enter to start"
-	test $dut $traffic $round
+	test $dut $traffic $round $pkt_size
 	change_dut dump $dut $traffic $round
 	#time=$(date +t%H%M%S)
 	#change_dut napi

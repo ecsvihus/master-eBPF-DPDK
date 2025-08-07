@@ -22,13 +22,17 @@ function parse () {
 		split($1, t_1, ":");
 		split($2, t_2, ":");
 		
-		start_us = t_1[1]*3600000000 + t_1[2]*60000000 + t_1[3]*1000000;
-		end_us = t_2[1]*3600000000 + t_2[2]*60000000 + t_2[3]*1000000;
-		diff_us = end_us-start_us
+		if (length($3) != 0) {
+			start_us = t_1[1]*3600000000 + t_1[2]*60000000 + t_1[3]*1000000;
+			end_us = t_2[1]*3600000000 + t_2[2]*60000000 + t_2[3]*1000000;
+			diff_us = end_us-start_us;
 
-		printf "%i\n", diff_us;
+			printf "%i\n", diff_us;	
+		}
+
 	}'
 }
+
 
 
 

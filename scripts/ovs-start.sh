@@ -4,6 +4,8 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+ip a add 10.10.10.1/24 dev eno3
+ip link set up dev eno3
 
 modprobe vfio-pci
 /usr/bin/chmod a+x /dev/vfio

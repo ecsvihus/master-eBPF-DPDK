@@ -1,0 +1,933 @@
+5  running xdp2 at 0 M round 3
+10  xdp2-0-3-1400: 23.63
+35  running xdp2 at 1000 M round 3
+36  xdp2-1000-3-1400: 23.82
+62  xdp2-1000-3-1400: 1.00gbps
+62  running xdp2 at 2000 M round 3
+63  xdp2-2000-3-1400: 23.81
+89  xdp2-2000-3-1400: 2.00gbps
+89  running xdp2 at 3000 M round 3
+90  xdp2-3000-3-1400: 23.94
+116  xdp2-3000-3-1400: 3.00gbps
+116  running xdp2 at 4000 M round 3
+117  xdp2-4000-3-1400: 23.93
+144  xdp2-4000-3-1400: 4.00gbps
+144  running xdp2 at 5000 M round 3
+145  xdp2-5000-3-1400: 23.95
+171  xdp2-5000-3-1400: 5.00gbps
+171  running xdp2 at 6000 M round 3
+172  xdp2-6000-3-1400: 23.99
+198  xdp2-6000-3-1400: 6.00gbps
+198  running xdp2 at 7000 M round 3
+199  xdp2-7000-3-1400: 24.09
+226  xdp2-7000-3-1400: 6.99gbps
+226  running xdp2 at 8000 M round 3
+227  xdp2-8000-3-1400: 23.91
+253  xdp2-8000-3-1400: 8.00gbps
+253  running xdp2 at 9000 M round 3
+254  xdp2-9000-3-1400: 23.73
+280  xdp2-9000-3-1400: 8.99gbps
+280  running xdp2 at 10000 M round 3
+281  xdp2-10000-3-1400: 23.66
+307  xdp2-10000-3-1400: 9.39gbps
+311  running xdp2 at 0 M round 1
+316  xdp2-0-1-1400: 23.96
+340  running xdp2 at 1000 M round 1
+342  xdp2-1000-1-1400: 23.83
+368  xdp2-1000-1-1400: 1.00gbps
+368  running xdp2 at 2000 M round 1
+369  xdp2-2000-1-1400: 23.98
+395  xdp2-2000-1-1400: 2.00gbps
+395  running xdp2 at 3000 M round 1
+396  xdp2-3000-1-1400: 23.76
+422  xdp2-3000-1-1400: 3.00gbps
+422  running xdp2 at 4000 M round 1
+423  xdp2-4000-1-1400: 24.11
+449  xdp2-4000-1-1400: 3.99gbps
+449  running xdp2 at 5000 M round 1
+450  xdp2-5000-1-1400: 23.89
+476  xdp2-5000-1-1400: 5.00gbps
+477  running xdp2 at 6000 M round 1
+478  xdp2-6000-1-1400: 24.52
+505  xdp2-6000-1-1400: 6.00gbps
+505  running xdp2 at 7000 M round 1
+506  xdp2-7000-1-1400: 24.21
+532  xdp2-7000-1-1400: 7.00gbps
+532  running xdp2 at 8000 M round 1
+534  xdp2-8000-1-1400: 23.79
+560  xdp2-8000-1-1400: 7.99gbps
+560  running xdp2 at 9000 M round 1
+561  xdp2-9000-1-1400: 23.76
+587  xdp2-9000-1-1400: 9.00gbps
+587  running xdp2 at 10000 M round 1
+588  xdp2-10000-1-1400: 24.12
+614  xdp2-10000-1-1400: 9.39gbps
+618  running xdp1 at 0 M round 3
+623  xdp1-0-3-1400: 23.81
+648  running xdp1 at 1000 M round 3
+649  xdp1-1000-3-1400: 23.93
+675  xdp1-1000-3-1400: 1.00gbps
+675  running xdp1 at 2000 M round 3
+676  xdp1-2000-3-1400: 23.88
+702  xdp1-2000-3-1400: 1.99gbps
+702  running xdp1 at 3000 M round 3
+703  xdp1-3000-3-1400: 23.81
+729  xdp1-3000-3-1400: 3.00gbps
+729  running xdp1 at 4000 M round 3
+730  xdp1-4000-3-1400: 24.31
+757  xdp1-4000-3-1400: 3.99gbps
+757  running xdp1 at 5000 M round 3
+759  xdp1-5000-3-1400: 23.76
+784  xdp1-5000-3-1400: 5.00gbps
+785  running xdp1 at 6000 M round 3
+786  xdp1-6000-3-1400: 24.20
+812  xdp1-6000-3-1400: 6.00gbps
+812  running xdp1 at 7000 M round 3
+813  xdp1-7000-3-1400: 23.81
+839  xdp1-7000-3-1400: 7.00gbps
+839  running xdp1 at 8000 M round 3
+840  xdp1-8000-3-1400: 23.93
+866  xdp1-8000-3-1400: 7.99gbps
+866  running xdp1 at 9000 M round 3
+868  xdp1-9000-3-1400: 23.96
+894  xdp1-9000-3-1400: 9.00gbps
+894  running xdp1 at 10000 M round 3
+895  xdp1-10000-3-1400: 24.54
+922  xdp1-10000-3-1400: 9.39gbps
+928  running dpdk at 0 M round 2
+933  dpdk-0-2-1400: 23.62
+958  running dpdk at 1000 M round 2
+959  dpdk-1000-2-1400: 23.70
+985  dpdk-1000-2-1400: 1.00gbps
+985  running dpdk at 2000 M round 2
+986  dpdk-2000-2-1400: 23.85
+1012  dpdk-2000-2-1400: 2.00gbps
+1012  running dpdk at 3000 M round 2
+1013  dpdk-3000-2-1400: 23.89
+1039  dpdk-3000-2-1400: 3.00gbps
+1039  running dpdk at 4000 M round 2
+1040  dpdk-4000-2-1400: 23.94
+1066  dpdk-4000-2-1400: 4.00gbps
+1066  running dpdk at 5000 M round 2
+1068  dpdk-5000-2-1400: 23.72
+1093  dpdk-5000-2-1400: 4.99gbps
+1093  running dpdk at 6000 M round 2
+1095  dpdk-6000-2-1400: 24.08
+1121  dpdk-6000-2-1400: 6.00gbps
+1121  running dpdk at 7000 M round 2
+1123  dpdk-7000-2-1400: 23.80
+1148  dpdk-7000-2-1400: 6.99gbps
+1148  running dpdk at 8000 M round 2
+1150  dpdk-8000-2-1400: 23.77
+1176  dpdk-8000-2-1400: 7.99gbps
+1176  running dpdk at 9000 M round 2
+1177  dpdk-9000-2-1400: 23.93
+1203  dpdk-9000-2-1400: 8.99gbps
+1203  running dpdk at 10000 M round 2
+1204  dpdk-10000-2-1400: 23.71
+1230  dpdk-10000-2-1400: 9.39gbps
+1242  running dpdk at 0 M round 1
+1248  dpdk-0-1-1400: 23.61
+1272  running dpdk at 1000 M round 1
+1273  dpdk-1000-1-1400: 23.70
+1299  dpdk-1000-1-1400: 1.00gbps
+1299  running dpdk at 2000 M round 1
+1300  dpdk-2000-1-1400: 23.86
+1326  dpdk-2000-1-1400: 2.00gbps
+1327  running dpdk at 3000 M round 1
+1328  dpdk-3000-1-1400: 23.96
+1354  dpdk-3000-1-1400: 2.99gbps
+1354  running dpdk at 4000 M round 1
+1355  dpdk-4000-1-1400: 24.03
+1381  dpdk-4000-1-1400: 4.00gbps
+1381  running dpdk at 5000 M round 1
+1382  dpdk-5000-1-1400: 23.84
+1408  dpdk-5000-1-1400: 4.99gbps
+1408  running dpdk at 6000 M round 1
+1409  dpdk-6000-1-1400: 24.21
+1436  dpdk-6000-1-1400: 6.00gbps
+1436  running dpdk at 7000 M round 1
+1437  dpdk-7000-1-1400: 23.73
+1463  dpdk-7000-1-1400: 6.99gbps
+1463  running dpdk at 8000 M round 1
+1464  dpdk-8000-1-1400: 23.74
+1490  dpdk-8000-1-1400: 7.99gbps
+1490  running dpdk at 9000 M round 1
+1491  dpdk-9000-1-1400: 23.80
+1517  dpdk-9000-1-1400: 9.00gbps
+1517  running dpdk at 10000 M round 1
+1518  dpdk-10000-1-1400: 23.72
+1544  dpdk-10000-1-1400: 9.39gbps
+1556  running xdp3 at 0 M round 2
+1561  xdp3-0-2-1400: 23.73
+1585  running xdp3 at 1000 M round 2
+1586  xdp3-1000-2-1400: 23.84
+1612  xdp3-1000-2-1400: 1.00gbps
+1612  running xdp3 at 2000 M round 2
+1613  xdp3-2000-2-1400: 23.86
+1639  xdp3-2000-2-1400: 2.00gbps
+1639  running xdp3 at 3000 M round 2
+1640  xdp3-3000-2-1400: 23.71
+1666  xdp3-3000-2-1400: 3.00gbps
+1666  running xdp3 at 4000 M round 2
+1667  xdp3-4000-2-1400: 23.69
+1693  xdp3-4000-2-1400: 4.00gbps
+1693  running xdp3 at 5000 M round 2
+1694  xdp3-5000-2-1400: 23.88
+1720  xdp3-5000-2-1400: 5.00gbps
+1720  running xdp3 at 6000 M round 2
+1722  xdp3-6000-2-1400: 23.77
+1748  xdp3-6000-2-1400: 6.00gbps
+1748  running xdp3 at 7000 M round 2
+1749  xdp3-7000-2-1400: 23.75
+1775  xdp3-7000-2-1400: 7.00gbps
+1775  running xdp3 at 8000 M round 2
+1776  xdp3-8000-2-1400: 23.87
+1802  xdp3-8000-2-1400: 8.00gbps
+1802  running xdp3 at 9000 M round 2
+1803  xdp3-9000-2-1400: 24.33
+1830  xdp3-9000-2-1400: 8.99gbps
+1830  running xdp3 at 10000 M round 2
+1831  xdp3-10000-2-1400: 23.78
+1857  xdp3-10000-2-1400: 9.39gbps
+1861  running xdp1 at 0 M round 1
+1866  xdp1-0-1-1400: 23.94
+1891  running xdp1 at 1000 M round 1
+1892  xdp1-1000-1-1400: 23.75
+1918  xdp1-1000-1-1400: 1.00gbps
+1918  running xdp1 at 2000 M round 1
+1919  xdp1-2000-1-1400: 23.73
+1945  xdp1-2000-1-1400: 1.99gbps
+1945  running xdp1 at 3000 M round 1
+1946  xdp1-3000-1-1400: 24.01
+1972  xdp1-3000-1-1400: 3.00gbps
+1972  running xdp1 at 4000 M round 1
+1973  xdp1-4000-1-1400: 24.02
+2000  xdp1-4000-1-1400: 4.00gbps
+2000  running xdp1 at 5000 M round 1
+2001  xdp1-5000-1-1400: 24.08
+2027  xdp1-5000-1-1400: 5.00gbps
+2027  running xdp1 at 6000 M round 1
+2028  xdp1-6000-1-1400: 24.28
+2055  xdp1-6000-1-1400: 6.00gbps
+2055  running xdp1 at 7000 M round 1
+2056  xdp1-7000-1-1400: 23.84
+2082  xdp1-7000-1-1400: 7.00gbps
+2082  running xdp1 at 8000 M round 1
+2083  xdp1-8000-1-1400: 23.97
+2109  xdp1-8000-1-1400: 8.00gbps
+2109  running xdp1 at 9000 M round 1
+2110  xdp1-9000-1-1400: 23.77
+2136  xdp1-9000-1-1400: 9.00gbps
+2136  running xdp1 at 10000 M round 1
+2137  xdp1-10000-1-1400: 23.80
+2163  xdp1-10000-1-1400: 9.39gbps
+2165  running napi at 0 M round 2
+2169  napi-0-2-1400: 23.72
+2193  running napi at 1000 M round 2
+2195  napi-1000-2-1400: 23.98
+2221  napi-1000-2-1400: 1.00gbps
+2221  running napi at 2000 M round 2
+2222  napi-2000-2-1400: 23.76
+2248  napi-2000-2-1400: 2.00gbps
+2248  running napi at 3000 M round 2
+2249  napi-3000-2-1400: 23.81
+2275  napi-3000-2-1400: 3.00gbps
+2275  running napi at 4000 M round 2
+2276  napi-4000-2-1400: 23.93
+2302  napi-4000-2-1400: 4.00gbps
+2302  running napi at 5000 M round 2
+2304  napi-5000-2-1400: 24.03
+2330  napi-5000-2-1400: 5.00gbps
+2330  running napi at 6000 M round 2
+2331  napi-6000-2-1400: 23.89
+2357  napi-6000-2-1400: 5.99gbps
+2357  running napi at 7000 M round 2
+2358  napi-7000-2-1400: 23.98
+2384  napi-7000-2-1400: 7.00gbps
+2384  running napi at 8000 M round 2
+2385  napi-8000-2-1400: 23.82
+2411  napi-8000-2-1400: 8.00gbps
+2411  running napi at 9000 M round 2
+2413  napi-9000-2-1400: 23.79
+2439  napi-9000-2-1400: 8.99gbps
+2439  running napi at 10000 M round 2
+2440  napi-10000-2-1400: 23.87
+2466  napi-10000-2-1400: 9.12gbps
+2469  running xdp2 at 0 M round 2
+2474  xdp2-0-2-1400: 23.78
+2499  running xdp2 at 1000 M round 2
+2500  xdp2-1000-2-1400: 23.86
+2526  xdp2-1000-2-1400: 1.00gbps
+2526  running xdp2 at 2000 M round 2
+2527  xdp2-2000-2-1400: 23.86
+2553  xdp2-2000-2-1400: 2.00gbps
+2553  running xdp2 at 3000 M round 2
+2554  xdp2-3000-2-1400: 23.98
+2580  xdp2-3000-2-1400: 3.00gbps
+2580  running xdp2 at 4000 M round 2
+2581  xdp2-4000-2-1400: 24.07
+2608  xdp2-4000-2-1400: 4.00gbps
+2608  running xdp2 at 5000 M round 2
+2609  xdp2-5000-2-1400: 23.89
+2635  xdp2-5000-2-1400: 4.99gbps
+2635  running xdp2 at 6000 M round 2
+2636  xdp2-6000-2-1400: 23.72
+2662  xdp2-6000-2-1400: 6.00gbps
+2662  running xdp2 at 7000 M round 2
+2663  xdp2-7000-2-1400: 23.72
+2689  xdp2-7000-2-1400: 7.00gbps
+2689  running xdp2 at 8000 M round 2
+2690  xdp2-8000-2-1400: 23.77
+2716  xdp2-8000-2-1400: 8.00gbps
+2716  running xdp2 at 9000 M round 2
+2717  xdp2-9000-2-1400: 23.75
+2743  xdp2-9000-2-1400: 8.99gbps
+2743  running xdp2 at 10000 M round 2
+2744  xdp2-10000-2-1400: 23.77
+2770  xdp2-10000-2-1400: 9.39gbps
+2774  running xdp1 at 0 M round 2
+2780  xdp1-0-2-1400: 23.96
+2805  running xdp1 at 1000 M round 2
+2806  xdp1-1000-2-1400: 23.70
+2832  xdp1-1000-2-1400: 1.00gbps
+2832  running xdp1 at 2000 M round 2
+2833  xdp1-2000-2-1400: 23.76
+2859  xdp1-2000-2-1400: 2.00gbps
+2859  running xdp1 at 3000 M round 2
+2860  xdp1-3000-2-1400: 23.77
+2886  xdp1-3000-2-1400: 3.00gbps
+2886  running xdp1 at 4000 M round 2
+2887  xdp1-4000-2-1400: 24.15
+2914  xdp1-4000-2-1400: 4.00gbps
+2914  running xdp1 at 5000 M round 2
+2915  xdp1-5000-2-1400: 23.80
+2941  xdp1-5000-2-1400: 5.00gbps
+2941  running xdp1 at 6000 M round 2
+2942  xdp1-6000-2-1400: 24.26
+2968  xdp1-6000-2-1400: 5.99gbps
+2968  running xdp1 at 7000 M round 2
+2969  xdp1-7000-2-1400: 23.96
+2995  xdp1-7000-2-1400: 6.99gbps
+2995  running xdp1 at 8000 M round 2
+2997  xdp1-8000-2-1400: 24.31
+3024  xdp1-8000-2-1400: 7.99gbps
+3024  running xdp1 at 9000 M round 2
+3025  xdp1-9000-2-1400: 23.94
+3051  xdp1-9000-2-1400: 8.99gbps
+3051  running xdp1 at 10000 M round 2
+3052  xdp1-10000-2-1400: 23.78
+3078  xdp1-10000-2-1400: 9.39gbps
+3080  running napi at 0 M round 1
+3084  napi-0-1-1400: 23.66
+3109  running napi at 1000 M round 1
+3110  napi-1000-1-1400: 23.85
+3136  napi-1000-1-1400: 1.00gbps
+3136  running napi at 2000 M round 1
+3137  napi-2000-1-1400: 23.98
+3163  napi-2000-1-1400: 2.00gbps
+3163  running napi at 3000 M round 1
+3165  napi-3000-1-1400: 23.99
+3191  napi-3000-1-1400: 3.00gbps
+3191  running napi at 4000 M round 1
+3192  napi-4000-1-1400: 23.72
+3218  napi-4000-1-1400: 3.99gbps
+3218  running napi at 5000 M round 1
+3219  napi-5000-1-1400: 23.74
+3245  napi-5000-1-1400: 5.00gbps
+3245  running napi at 6000 M round 1
+3246  napi-6000-1-1400: 23.95
+3272  napi-6000-1-1400: 6.00gbps
+3272  running napi at 7000 M round 1
+3273  napi-7000-1-1400: 23.87
+3299  napi-7000-1-1400: 7.00gbps
+3299  running napi at 8000 M round 1
+3300  napi-8000-1-1400: 23.72
+3326  napi-8000-1-1400: 8.00gbps
+3326  running napi at 9000 M round 1
+3327  napi-9000-1-1400: 23.69
+3353  napi-9000-1-1400: 8.99gbps
+3353  running napi at 10000 M round 1
+3354  napi-10000-1-1400: 23.83
+3380  napi-10000-1-1400: 9.03gbps
+3384  running xdp3 at 0 M round 3
+3388  xdp3-0-3-1400: 23.61
+3413  running xdp3 at 1000 M round 3
+3414  xdp3-1000-3-1400: 23.74
+3440  xdp3-1000-3-1400: 1.00gbps
+3440  running xdp3 at 2000 M round 3
+3441  xdp3-2000-3-1400: 23.95
+3467  xdp3-2000-3-1400: 2.00gbps
+3467  running xdp3 at 3000 M round 3
+3468  xdp3-3000-3-1400: 23.92
+3494  xdp3-3000-3-1400: 3.00gbps
+3494  running xdp3 at 4000 M round 3
+3496  xdp3-4000-3-1400: 24.03
+3522  xdp3-4000-3-1400: 4.00gbps
+3522  running xdp3 at 5000 M round 3
+3523  xdp3-5000-3-1400: 24.25
+3549  xdp3-5000-3-1400: 5.00gbps
+3549  running xdp3 at 6000 M round 3
+3550  xdp3-6000-3-1400: 23.79
+3576  xdp3-6000-3-1400: 5.99gbps
+3576  running xdp3 at 7000 M round 3
+3578  xdp3-7000-3-1400: 23.69
+3603  xdp3-7000-3-1400: 6.99gbps
+3603  running xdp3 at 8000 M round 3
+3605  xdp3-8000-3-1400: 24.04
+3631  xdp3-8000-3-1400: 8.00gbps
+3631  running xdp3 at 9000 M round 3
+3632  xdp3-9000-3-1400: 23.73
+3658  xdp3-9000-3-1400: 9.00gbps
+3658  running xdp3 at 10000 M round 3
+3659  xdp3-10000-3-1400: 23.69
+3685  xdp3-10000-3-1400: 9.39gbps
+3687  running napi at 0 M round 3
+3691  napi-0-3-1400: 23.67
+3716  running napi at 1000 M round 3
+3717  napi-1000-3-1400: 23.70
+3743  napi-1000-3-1400: 1.00gbps
+3743  running napi at 2000 M round 3
+3744  napi-2000-3-1400: 23.87
+3770  napi-2000-3-1400: 2.00gbps
+3770  running napi at 3000 M round 3
+3771  napi-3000-3-1400: 23.84
+3797  napi-3000-3-1400: 3.00gbps
+3797  running napi at 4000 M round 3
+3798  napi-4000-3-1400: 23.93
+3824  napi-4000-3-1400: 4.00gbps
+3824  running napi at 5000 M round 3
+3826  napi-5000-3-1400: 23.93
+3852  napi-5000-3-1400: 5.00gbps
+3852  running napi at 6000 M round 3
+3853  napi-6000-3-1400: 24.04
+3879  napi-6000-3-1400: 6.00gbps
+3879  running napi at 7000 M round 3
+3880  napi-7000-3-1400: 23.77
+3906  napi-7000-3-1400: 6.99gbps
+3906  running napi at 8000 M round 3
+3907  napi-8000-3-1400: 23.80
+3933  napi-8000-3-1400: 8.00gbps
+3933  running napi at 9000 M round 3
+3934  napi-9000-3-1400: 23.94
+3960  napi-9000-3-1400: 8.99gbps
+3960  running napi at 10000 M round 3
+3962  napi-10000-3-1400: 23.74
+3987  napi-10000-3-1400: 9.38gbps
+3992  running dpdk at 0 M round 3
+3997  dpdk-0-3-1400: 23.61
+4022  running dpdk at 1000 M round 3
+4023  dpdk-1000-3-1400: 23.74
+4049  dpdk-1000-3-1400: 1.00gbps
+4049  running dpdk at 2000 M round 3
+4050  dpdk-2000-3-1400: 23.91
+4076  dpdk-2000-3-1400: 2.00gbps
+4077  running dpdk at 3000 M round 3
+4078  dpdk-3000-3-1400: 23.91
+4104  dpdk-3000-3-1400: 3.00gbps
+4104  running dpdk at 4000 M round 3
+4105  dpdk-4000-3-1400: 23.98
+4131  dpdk-4000-3-1400: 3.99gbps
+4131  running dpdk at 5000 M round 3
+4132  dpdk-5000-3-1400: 24.01
+4158  dpdk-5000-3-1400: 5.00gbps
+4158  running dpdk at 6000 M round 3
+4159  dpdk-6000-3-1400: 23.84
+4185  dpdk-6000-3-1400: 5.99gbps
+4185  running dpdk at 7000 M round 3
+4187  dpdk-7000-3-1400: 23.77
+4212  dpdk-7000-3-1400: 6.99gbps
+4213  running dpdk at 8000 M round 3
+4214  dpdk-8000-3-1400: 24.28
+4240  dpdk-8000-3-1400: 8.00gbps
+4240  running dpdk at 9000 M round 3
+4241  dpdk-9000-3-1400: 23.93
+4267  dpdk-9000-3-1400: 9.00gbps
+4267  running dpdk at 10000 M round 3
+4269  dpdk-10000-3-1400: 23.75
+4294  dpdk-10000-3-1400: 9.39gbps
+4307  running xdp3 at 0 M round 1
+4311  xdp3-0-1-1400: 23.61
+4336  running xdp3 at 1000 M round 1
+4337  xdp3-1000-1-1400: 23.76
+4363  xdp3-1000-1-1400: 1.00gbps
+4363  running xdp3 at 2000 M round 1
+4364  xdp3-2000-1-1400: 23.71
+4390  xdp3-2000-1-1400: 2.00gbps
+4390  running xdp3 at 3000 M round 1
+4391  xdp3-3000-1-1400: 23.77
+4417  xdp3-3000-1-1400: 3.00gbps
+4417  running xdp3 at 4000 M round 1
+4418  xdp3-4000-1-1400: 23.89
+4444  xdp3-4000-1-1400: 4.00gbps
+4444  running xdp3 at 5000 M round 1
+4445  xdp3-5000-1-1400: 23.94
+4471  xdp3-5000-1-1400: 5.00gbps
+4471  running xdp3 at 6000 M round 1
+4473  xdp3-6000-1-1400: 23.70
+4498  xdp3-6000-1-1400: 6.00gbps
+4498  running xdp3 at 7000 M round 1
+4500  xdp3-7000-1-1400: 23.70
+4525  xdp3-7000-1-1400: 6.99gbps
+4525  running xdp3 at 8000 M round 1
+4527  xdp3-8000-1-1400: 23.70
+4552  xdp3-8000-1-1400: 8.00gbps
+4552  running xdp3 at 9000 M round 1
+4554  xdp3-9000-1-1400: 23.77
+4579  xdp3-9000-1-1400: 9.00gbps
+4580  running xdp3 at 10000 M round 1
+4581  xdp3-10000-1-1400: 23.78
+4607  xdp3-10000-1-1400: 9.39gbps
+5  running xdp3 at 0 M round 2
+9  xdp3-0-2-150: 24.00
+34  running xdp3 at 1000 M round 2
+35  xdp3-1000-2-150: 23.89
+61  xdp3-1000-2-150: 1.00gbps
+61  running xdp3 at 2000 M round 2
+62  xdp3-2000-2-150: 23.96
+88  xdp3-2000-2-150: 2.00gbps
+88  running xdp3 at 3000 M round 2
+90  xdp3-3000-2-150: 23.76
+115  xdp3-3000-2-150: 2.99gbps
+115  running xdp3 at 4000 M round 2
+117  xdp3-4000-2-150: 23.77
+142  xdp3-4000-2-150: 4.00gbps
+143  running xdp3 at 5000 M round 2
+144  xdp3-5000-2-150: 23.93
+170  xdp3-5000-2-150: 5.00gbps
+170  running xdp3 at 6000 M round 2
+171  xdp3-6000-2-150: 23.69
+197  xdp3-6000-2-150: 4.74gbps
+201  running xdp2 at 0 M round 3
+205  xdp2-0-3-150: 23.99
+230  running xdp2 at 1000 M round 3
+231  xdp2-1000-3-150: 23.89
+257  xdp2-1000-3-150: 1.00gbps
+257  running xdp2 at 2000 M round 3
+258  xdp2-2000-3-150: 24.04
+284  xdp2-2000-3-150: 1.88gbps
+284  running xdp2 at 3000 M round 3
+286  xdp2-3000-3-150: 23.76
+314  40000 missed packets
+314  more than 10 missed packets, redoing experiment
+318  xdp2-3000-3-150: 24.26
+345  xdp2-3000-3-150: 1.92gbps
+345  running xdp2 at 4000 M round 3
+346  xdp2-4000-3-150: 23.93
+372  xdp2-4000-3-150: 3.09gbps
+372  running xdp2 at 5000 M round 3
+373  xdp2-5000-3-150: 24.16
+399  xdp2-5000-3-150: 3.11gbps
+399  running xdp2 at 6000 M round 3
+400  xdp2-6000-3-150: 23.63
+429  40000 missed packets
+429  more than 10 missed packets, redoing experiment
+432  xdp2-6000-3-150: 24.23
+459  xdp2-6000-3-150: 3.16gbps
+461  running napi at 0 M round 1
+465  napi-0-1-150: 23.96
+489  running napi at 1000 M round 1
+491  napi-1000-1-150: 23.92
+517  napi-1000-1-150: 1.00gbps
+517  running napi at 2000 M round 1
+518  napi-2000-1-150: 24.02
+544  napi-2000-1-150: 1.77gbps
+544  running napi at 3000 M round 1
+545  napi-3000-1-150: 23.77
+571  napi-3000-1-150: 1.85gbps
+571  running napi at 4000 M round 1
+572  napi-4000-1-150: 23.97
+598  napi-4000-1-150: 1.76gbps
+598  running napi at 5000 M round 1
+600  napi-5000-1-150: 23.75
+625  napi-5000-1-150: 1.86gbps
+626  running napi at 6000 M round 1
+627  napi-6000-1-150: 23.92
+653  napi-6000-1-150: 1.83gbps
+656  running xdp1 at 0 M round 3
+661  xdp1-0-3-150: 23.65
+686  running xdp1 at 1000 M round 3
+687  xdp1-1000-3-150: 23.73
+713  xdp1-1000-3-150: 1.00gbps
+713  running xdp1 at 2000 M round 3
+714  xdp1-2000-3-150: 23.79
+740  xdp1-2000-3-150: 1.99gbps
+740  running xdp1 at 3000 M round 3
+741  xdp1-3000-3-150: 23.79
+767  xdp1-3000-3-150: 2.36gbps
+767  running xdp1 at 4000 M round 3
+768  xdp1-4000-3-150: 23.72
+794  xdp1-4000-3-150: 2.38gbps
+794  running xdp1 at 5000 M round 3
+795  xdp1-5000-3-150: 23.74
+821  xdp1-5000-3-150: 2.40gbps
+821  running xdp1 at 6000 M round 3
+822  xdp1-6000-3-150: 23.73
+850  40000 missed packets
+850  more than 10 missed packets, redoing experiment
+854  xdp1-6000-3-150: 23.67
+879  xdp1-6000-3-150: 2.30gbps
+884  running xdp2 at 0 M round 2
+890  xdp2-0-2-150: 23.94
+914  running xdp2 at 1000 M round 2
+915  xdp2-1000-2-150: 23.86
+941  xdp2-1000-2-150: 1.00gbps
+941  running xdp2 at 2000 M round 2
+943  xdp2-2000-2-150: 23.83
+969  xdp2-2000-2-150: 2.00gbps
+969  running xdp2 at 3000 M round 2
+970  xdp2-3000-2-150: 24.18
+996  xdp2-3000-2-150: 3.00gbps
+996  running xdp2 at 4000 M round 2
+997  xdp2-4000-2-150: 23.95
+1023  xdp2-4000-2-150: 3.99gbps
+1023  running xdp2 at 5000 M round 2
+1024  xdp2-5000-2-150: 24.08
+1051  xdp2-5000-2-150: 1.94gbps
+1051  running xdp2 at 6000 M round 2
+1052  xdp2-6000-2-150: 23.79
+1078  xdp2-6000-2-150: 1.45gbps
+1084  running dpdk at 0 M round 2
+1089  dpdk-0-2-150: 23.61
+1114  running dpdk at 1000 M round 2
+1115  dpdk-1000-2-150: 23.72
+1141  dpdk-1000-2-150: 1.00gbps
+1141  running dpdk at 2000 M round 2
+1142  dpdk-2000-2-150: 23.98
+1168  dpdk-2000-2-150: 2.00gbps
+1168  running dpdk at 3000 M round 2
+1169  dpdk-3000-2-150: 24.02
+1198  40000 missed packets
+1198  more than 10 missed packets, redoing experiment
+1202  dpdk-3000-2-150: 24.06
+1228  dpdk-3000-2-150: 2.99gbps
+1228  running dpdk at 4000 M round 2
+1229  dpdk-4000-2-150: 24.67
+1258  40000 missed packets
+1258  more than 10 missed packets, redoing experiment
+1261  dpdk-4000-2-150: 24.16
+1290  40000 missed packets
+1290  more than 10 missed packets, redoing experiment
+1293  dpdk-4000-2-150: 23.73
+1322  40000 missed packets
+1322  more than 10 missed packets, redoing experiment
+1326  dpdk-4000-2-150: 23.77
+1351  dpdk-4000-2-150: 4.00gbps
+1351  running dpdk at 5000 M round 2
+1353  dpdk-5000-2-150: 23.84
+1382  40000 missed packets
+1382  more than 10 missed packets, redoing experiment
+1385  dpdk-5000-2-150: 23.94
+1411  dpdk-5000-2-150: 5.00gbps
+1411  running dpdk at 6000 M round 2
+1412  dpdk-6000-2-150: 23.76
+1440  40000 missed packets
+1440  more than 10 missed packets, redoing experiment
+1443  dpdk-6000-2-150: 23.77
+1472  40000 missed packets
+1472  more than 10 missed packets, redoing experiment
+1475  dpdk-6000-2-150: 23.78
+1504  40000 missed packets
+1504  more than 10 missed packets, redoing experiment
+1507  dpdk-6000-2-150: 23.77
+1533  dpdk-6000-2-150: 5.82gbps
+1543  running napi at 0 M round 3
+1548  napi-0-3-150: 23.66
+1573  running napi at 1000 M round 3
+1574  napi-1000-3-150: 23.88
+1600  napi-1000-3-150: 1.00gbps
+1600  running napi at 2000 M round 3
+1602  napi-2000-3-150: 23.96
+1628  napi-2000-3-150: 2.00gbps
+1628  running napi at 3000 M round 3
+1629  napi-3000-3-150: 23.79
+1655  napi-3000-3-150: 3.00gbps
+1655  running napi at 4000 M round 3
+1656  napi-4000-3-150: 23.74
+1682  napi-4000-3-150: 3.07gbps
+1682  running napi at 5000 M round 3
+1683  napi-5000-3-150: 23.76
+1709  napi-5000-3-150: 3.05gbps
+1709  running napi at 6000 M round 3
+1710  napi-6000-3-150: 23.75
+1736  napi-6000-3-150: 3.05gbps
+1739  running xdp3 at 0 M round 1
+1744  xdp3-0-1-150: 23.96
+1768  running xdp3 at 1000 M round 1
+1769  xdp3-1000-1-150: 23.85
+1795  xdp3-1000-1-150: 1.00gbps
+1795  running xdp3 at 2000 M round 1
+1797  xdp3-2000-1-150: 23.84
+1823  xdp3-2000-1-150: 2.00gbps
+1823  running xdp3 at 3000 M round 1
+1824  xdp3-3000-1-150: 24.09
+1850  xdp3-3000-1-150: 3.00gbps
+1850  running xdp3 at 4000 M round 1
+1851  xdp3-4000-1-150: 23.92
+1877  xdp3-4000-1-150: 4.00gbps
+1877  running xdp3 at 5000 M round 1
+1878  xdp3-5000-1-150: 23.76
+1907  40000 missed packets
+1907  more than 10 missed packets, redoing experiment
+1910  xdp3-5000-1-150: 24.31
+1939  40000 missed packets
+1939  more than 10 missed packets, redoing experiment
+1943  xdp3-5000-1-150: 23.95
+1971  40000 missed packets
+1971  more than 10 missed packets, redoing experiment
+1974  xdp3-5000-1-150: 23.72
+2000  xdp3-5000-1-150: 4.83gbps
+2000  running xdp3 at 6000 M round 1
+2001  xdp3-6000-1-150: 23.84
+2030  40000 missed packets
+2030  more than 10 missed packets, redoing experiment
+2034  xdp3-6000-1-150: 23.88
+2063  40000 missed packets
+2063  more than 10 missed packets, redoing experiment
+2066  xdp3-6000-1-150: 23.97
+2094  40000 missed packets
+2094  more than 10 missed packets, redoing experiment
+2097  xdp3-6000-1-150: 23.77
+2126  40000 missed packets
+2126  more than 10 missed packets, redoing experiment
+2130  xdp3-6000-1-150: 23.77
+2158  40000 missed packets
+2158  more than 10 missed packets, redoing experiment
+2162  xdp3-6000-1-150: 23.98
+2191  40000 missed packets
+2191  more than 10 missed packets, redoing experiment
+2194  xdp3-6000-1-150: 23.71
+2223  40000 missed packets
+2223  more than 10 missed packets, redoing experiment
+2226  xdp3-6000-1-150: 23.73
+2255  40000 missed packets
+2255  more than 10 missed packets, redoing experiment
+2258  xdp3-6000-1-150: 23.67
+2287  40000 missed packets
+2287  more than 10 missed packets, redoing experiment
+2290  xdp3-6000-1-150: 23.98
+2318  40000 missed packets
+2318  more than 10 missed packets, redoing experiment
+2321  xdp3-6000-1-150: 23.77
+2347  xdp3-6000-1-150: 4.74gbps
+2351  running xdp3 at 0 M round 3
+2356  xdp3-0-3-150: 23.91
+2381  running xdp3 at 1000 M round 3
+2382  xdp3-1000-3-150: 23.83
+2408  xdp3-1000-3-150: 1.00gbps
+2408  running xdp3 at 2000 M round 3
+2409  xdp3-2000-3-150: 23.83
+2435  xdp3-2000-3-150: 2.00gbps
+2435  running xdp3 at 3000 M round 3
+2436  xdp3-3000-3-150: 24.02
+2465  40000 missed packets
+2465  more than 10 missed packets, redoing experiment
+2468  xdp3-3000-3-150: 23.76
+2494  xdp3-3000-3-150: 3.00gbps
+2494  running xdp3 at 4000 M round 3
+2496  xdp3-4000-3-150: 23.74
+2521  xdp3-4000-3-150: 4.00gbps
+2521  running xdp3 at 5000 M round 3
+2523  xdp3-5000-3-150: 23.78
+2551  40000 missed packets
+2551  more than 10 missed packets, redoing experiment
+2555  xdp3-5000-3-150: 23.75
+2580  xdp3-5000-3-150: 4.74gbps
+2581  running xdp3 at 6000 M round 3
+2582  xdp3-6000-3-150: 23.95
+2611  40000 missed packets
+2611  more than 10 missed packets, redoing experiment
+2614  xdp3-6000-3-150: 23.66
+2640  xdp3-6000-3-150: 4.06gbps
+2644  running xdp1 at 0 M round 2
+2649  xdp1-0-2-150: 23.66
+2674  running xdp1 at 1000 M round 2
+2675  xdp1-1000-2-150: 23.80
+2701  xdp1-1000-2-150: 1.00gbps
+2701  running xdp1 at 2000 M round 2
+2702  xdp1-2000-2-150: 23.82
+2728  xdp1-2000-2-150: 2.00gbps
+2728  running xdp1 at 3000 M round 2
+2729  xdp1-3000-2-150: 24.02
+2755  xdp1-3000-2-150: 1.52gbps
+2755  running xdp1 at 4000 M round 2
+2756  xdp1-4000-2-150: 23.66
+2785  40000 missed packets
+2785  more than 10 missed packets, redoing experiment
+2788  xdp1-4000-2-150: 23.96
+2816  40000 missed packets
+2816  more than 10 missed packets, redoing experiment
+2819  xdp1-4000-2-150: 23.62
+2847  40000 missed packets
+2847  more than 10 missed packets, redoing experiment
+2851  xdp1-4000-2-150: 23.73
+2879  40000 missed packets
+2879  more than 10 missed packets, redoing experiment
+2883  xdp1-4000-2-150: 23.68
+2911  40000 missed packets
+2911  more than 10 missed packets, redoing experiment
+2914  xdp1-4000-2-150: 23.63
+2941  xdp1-4000-2-150: 1.46gbps
+2941  running xdp1 at 5000 M round 2
+2942  xdp1-5000-2-150: 23.69
+2968  xdp1-5000-2-150: 1.44gbps
+2968  running xdp1 at 6000 M round 2
+2969  xdp1-6000-2-150: 23.72
+2995  xdp1-6000-2-150: 1.46gbps
+2999  running xdp2 at 0 M round 1
+3003  xdp2-0-1-150: 23.92
+3028  running xdp2 at 1000 M round 1
+3029  xdp2-1000-1-150: 23.88
+3055  xdp2-1000-1-150: 1.00gbps
+3055  running xdp2 at 2000 M round 1
+3056  xdp2-2000-1-150: 23.83
+3082  xdp2-2000-1-150: 2.00gbps
+3082  running xdp2 at 3000 M round 1
+3083  xdp2-3000-1-150: 23.93
+3109  xdp2-3000-1-150: 3.00gbps
+3109  running xdp2 at 4000 M round 1
+3110  xdp2-4000-1-150: 23.76
+3139  40000 missed packets
+3139  more than 10 missed packets, redoing experiment
+3142  xdp2-4000-1-150: 23.74
+3168  xdp2-4000-1-150: 4.00gbps
+3168  running xdp2 at 5000 M round 1
+3169  xdp2-5000-1-150: 23.73
+3198  40000 missed packets
+3198  more than 10 missed packets, redoing experiment
+3201  xdp2-5000-1-150: 23.72
+3227  xdp2-5000-1-150: 3.71gbps
+3227  running xdp2 at 6000 M round 1
+3229  xdp2-6000-1-150: 24.66
+3258  40000 missed packets
+3258  more than 10 missed packets, redoing experiment
+3261  xdp2-6000-1-150: 23.71
+3287  xdp2-6000-1-150: 3.21gbps
+3289  running napi at 0 M round 2
+3293  napi-0-2-150: 23.62
+3318  running napi at 1000 M round 2
+3319  napi-1000-2-150: 23.86
+3345  napi-1000-2-150: 1.00gbps
+3345  running napi at 2000 M round 2
+3347  napi-2000-2-150: 23.93
+3373  napi-2000-2-150: 1.70gbps
+3373  running napi at 3000 M round 2
+3374  napi-3000-2-150: 23.89
+3400  napi-3000-2-150: 1.77gbps
+3400  running napi at 4000 M round 2
+3401  napi-4000-2-150: 23.72
+3427  napi-4000-2-150: 1.54gbps
+3427  running napi at 5000 M round 2
+3428  napi-5000-2-150: 23.84
+3454  napi-5000-2-150: 1.75gbps
+3454  running napi at 6000 M round 2
+3455  napi-6000-2-150: 23.64
+3481  napi-6000-2-150: 1.55gbps
+3486  running dpdk at 0 M round 3
+3491  dpdk-0-3-150: 23.88
+3516  running dpdk at 1000 M round 3
+3517  dpdk-1000-3-150: 23.69
+3543  dpdk-1000-3-150: 1.00gbps
+3543  running dpdk at 2000 M round 3
+3544  dpdk-2000-3-150: 23.73
+3573  40000 missed packets
+3573  more than 10 missed packets, redoing experiment
+3576  dpdk-2000-3-150: 23.74
+3602  dpdk-2000-3-150: 2.00gbps
+3602  running dpdk at 3000 M round 3
+3603  dpdk-3000-3-150: 23.75
+3629  dpdk-3000-3-150: 3.00gbps
+3629  running dpdk at 4000 M round 3
+3630  dpdk-4000-3-150: 23.80
+3658  40000 missed packets
+3658  more than 10 missed packets, redoing experiment
+3662  dpdk-4000-3-150: 24.20
+3690  40000 missed packets
+3690  more than 10 missed packets, redoing experiment
+3694  dpdk-4000-3-150: 24.21
+3723  40000 missed packets
+3723  more than 10 missed packets, redoing experiment
+3726  dpdk-4000-3-150: 24.08
+3754  40000 missed packets
+3754  more than 10 missed packets, redoing experiment
+3758  dpdk-4000-3-150: 23.90
+3784  dpdk-4000-3-150: 4.00gbps
+3784  running dpdk at 5000 M round 3
+3785  dpdk-5000-3-150: 24.11
+3814  40000 missed packets
+3814  more than 10 missed packets, redoing experiment
+3817  dpdk-5000-3-150: 23.83
+3845  40000 missed packets
+3845  more than 10 missed packets, redoing experiment
+3848  dpdk-5000-3-150: 24.56
+3876  dpdk-5000-3-150: 4.99gbps
+3876  running dpdk at 6000 M round 3
+3877  dpdk-6000-3-150: 24.50
+3907  40000 missed packets
+3907  more than 10 missed packets, redoing experiment
+3910  dpdk-6000-3-150: 24.08
+3938  40000 missed packets
+3938  more than 10 missed packets, redoing experiment
+3942  dpdk-6000-3-150: 24.19
+3970  40000 missed packets
+3970  more than 10 missed packets, redoing experiment
+3974  dpdk-6000-3-150: 24.44
+4001  dpdk-6000-3-150: 5.91gbps
+4013  running xdp1 at 0 M round 1
+4018  xdp1-0-1-150: 23.62
+4043  running xdp1 at 1000 M round 1
+4044  xdp1-1000-1-150: 24.23
+4072  40000 missed packets
+4072  more than 10 missed packets, redoing experiment
+4076  xdp1-1000-1-150: 23.96
+4102  xdp1-1000-1-150: .99gbps
+4102  running xdp1 at 2000 M round 1
+4103  xdp1-2000-1-150: 23.65
+4129  xdp1-2000-1-150: 1.24gbps
+4129  running xdp1 at 3000 M round 1
+4130  xdp1-3000-1-150: 24.14
+4156  xdp1-3000-1-150: 1.25gbps
+4156  running xdp1 at 4000 M round 1
+4157  xdp1-4000-1-150: 23.62
+4185  40000 missed packets
+4185  more than 10 missed packets, redoing experiment
+4189  xdp1-4000-1-150: 23.75
+4217  40000 missed packets
+4217  more than 10 missed packets, redoing experiment
+4221  xdp1-4000-1-150: 23.72
+4246  xdp1-4000-1-150: 1.27gbps
+4246  running xdp1 at 5000 M round 1
+4248  xdp1-5000-1-150: 23.73
+4276  40000 missed packets
+4276  more than 10 missed packets, redoing experiment
+4280  xdp1-5000-1-150: 23.76
+4305  xdp1-5000-1-150: 1.21gbps
+4305  running xdp1 at 6000 M round 1
+4307  xdp1-6000-1-150: 23.74
+4335  40000 missed packets
+4335  more than 10 missed packets, redoing experiment
+4339  xdp1-6000-1-150: 23.76
+4364  xdp1-6000-1-150: 1.27gbps
+4370  running dpdk at 0 M round 1
+4375  dpdk-0-1-150: 23.62
+4400  running dpdk at 1000 M round 1
+4401  dpdk-1000-1-150: 23.80
+4427  dpdk-1000-1-150: 1.00gbps
+4427  running dpdk at 2000 M round 1
+4428  dpdk-2000-1-150: 23.97
+4455  dpdk-2000-1-150: 2.00gbps
+4455  running dpdk at 3000 M round 1
+4456  dpdk-3000-1-150: 24.04
+4482  dpdk-3000-1-150: 2.99gbps
+4482  running dpdk at 4000 M round 1
+4483  dpdk-4000-1-150: 23.82
+4509  dpdk-4000-1-150: 4.00gbps
+4509  running dpdk at 5000 M round 1
+4510  dpdk-5000-1-150: 23.96
+4536  dpdk-5000-1-150: 5.00gbps
+4536  running dpdk at 6000 M round 1
+4538  dpdk-6000-1-150: 23.78
+4566  40000 missed packets
+4566  more than 10 missed packets, redoing experiment
+4570  dpdk-6000-1-150: 23.80
+4595  dpdk-6000-1-150: 5.87gbps

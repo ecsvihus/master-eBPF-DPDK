@@ -1,0 +1,9 @@
+NXST_FLOW reply (xid=0x4):
+cookie=0x0, duration=337.389s, table=0, n_packets=4897908, n_bytes=323581932, idle_age=1, tcp,in_port=1 actions=output:2
+cookie=0x0, duration=337.383s, table=0, n_packets=4193470, n_bytes=23844810781, idle_age=1, tcp,in_port=2 actions=output:1
+cookie=0x0, duration=337.377s, table=0, n_packets=0, n_bytes=0, idle_age=337, icmp,in_port=1 actions=output:2
+cookie=0x0, duration=337.372s, table=0, n_packets=0, n_bytes=0, idle_age=337, icmp,in_port=2 actions=output:1
+cookie=0x0, duration=337.354s, table=0, n_packets=0, n_bytes=0, idle_age=337, udp,in_port=1 actions=output:2
+cookie=0x0, duration=337.348s, table=0, n_packets=0, n_bytes=0, idle_age=337, udp,in_port=2 actions=output:1
+cookie=0x0, duration=337.366s, table=0, n_packets=15, n_bytes=900, idle_age=11, arp,in_port=1 actions=output:2
+cookie=0x0, duration=337.360s, table=0, n_packets=14, n_bytes=840, idle_age=11, arp,in_port=2 actions=output:1
